@@ -1,6 +1,6 @@
 {
-  "name": "Slack Dicebot",
-  "description": "A Slack slash command bot to roll dice",
-  "repository": "https://github.com/plumbis/python-slack-dicebot",
+  "name": "Highdex Dicebot",
+  "description": "A dicebot made just for Highdex.",
+  "repository": "https://github.com/rijvirajib/python-slack-dicebot",
   "keywords": ["python", "slack", "dicebot", "slash command", "slackbot"]
 }
