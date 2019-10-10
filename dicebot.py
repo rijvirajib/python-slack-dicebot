@@ -300,35 +300,36 @@ def format_standard_roll(rolled_dice, username, roll):
 
     output_text = []
     try:
-        output_text.append("Rolled " + str(roll["num_dice"]) + "d" + str(roll["die"]) + ":")
+        output_text.append("rolled " + str(roll["num_dice"]) + "d" + str(roll["die"]) + " = ")
     except:
         raise DicebotException("format_standard_roll could not cast roll values to string.")
 
     # output_text.append("\n")
+    
+    # printed_first_roll = False
 
-    printed_first_roll = False
+    # for roll in string_number_list:
 
-    for roll in string_number_list:
+    #     # Only put a "+" after the first roll
+    #     if printed_first_roll:
+    #         output_text.append(" + ")
 
-        # Only put a "+" after the first roll
-        if printed_first_roll:
-            output_text.append(" + ")
+    #     output_text.append(roll)
+    #     printed_first_roll = True
 
-        output_text.append(roll)
-        printed_first_roll = True
+    # if rolled_dice["modifier"] > 0:
+    #     output_text.append(" (+" + str(rolled_dice["modifier"]) + ")")
 
-    if rolled_dice["modifier"] > 0:
-        output_text.append(" (+" + str(rolled_dice["modifier"]) + ")")
+    # if rolled_dice["modifier"] < 0:
+    #     # Negative modifiers are "-2" so no need to prepend "-"
+    #     output_text.append(" (" + str(rolled_dice["modifier"]) + ")")
 
-    if rolled_dice["modifier"] < 0:
-        # Negative modifiers are "-2" so no need to prepend "-"
-        output_text.append(" (" + str(rolled_dice["modifier"]) + ")")
-
-    output_text.append(" = ")
+    # output_text.append(" = ")
     output_text.append("*" + str(rolled_dice["total"]) + "*")
     output_text.append("\n")
 
-    return "".join(output_text)
+    # Italicize the bot response
+    return "_" + "".join(output_text) + "_"
 
 
 def format_adv_dis_roll(rolled_dice, username, roll, adv=False, dis=False):
