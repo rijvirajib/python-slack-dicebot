@@ -61,7 +61,7 @@ def parse_roll(input_string, adv_or_dis=False, character=False):
     Valid numbers are between 1d1 and 99d100
 
     adv_or_dis = True means that the roll will be set to 2d20
-    character = True means the roll will be set to 4d6
+    character = True means the roll will be set to 3d6
 
     returns a dict of:
     {"num_dice": int(number_of_dice),
@@ -80,7 +80,7 @@ def parse_roll(input_string, adv_or_dis=False, character=False):
             if debug:
                 print("Rolling character")
             # Stat blocks do not have modifiers, so ignore any input.
-            input_roll_string = "4d6"
+            input_roll_string = "3d6"
 
         else:
             if debug:
@@ -300,11 +300,11 @@ def format_standard_roll(rolled_dice, username, roll):
 
     output_text = []
     try:
-        output_text.append(str(username) + " rolled " + str(roll["num_dice"]) + "d" + str(roll["die"]) + ":")
+        output_text.append("Rolled " + str(roll["num_dice"]) + "d" + str(roll["die"]) + ":")
     except:
         raise DicebotException("format_standard_roll could not cast roll values to string.")
 
-    output_text.append("\n")
+    # output_text.append("\n")
 
     printed_first_roll = False
 
