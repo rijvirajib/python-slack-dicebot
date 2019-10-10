@@ -299,6 +299,7 @@ def format_standard_roll(rolled_dice, username, roll):
         raise DicebotException("format_standard_roll passed values that can't be cast to string")
 
     output_text = []
+    output_text.append("_")
     try:
         output_text.append("rolled " + str(roll["num_dice"]) + "d" + str(roll["die"]) + " = ")
     except:
@@ -326,10 +327,11 @@ def format_standard_roll(rolled_dice, username, roll):
 
     # output_text.append(" = ")
     output_text.append("*" + str(rolled_dice["total"]) + "*")
+    output_text.append("_")
     output_text.append("\n")
 
     # Italicize the bot response
-    return "_" + "".join(output_text) + "_"
+    return "".join(output_text)
 
 
 def format_adv_dis_roll(rolled_dice, username, roll, adv=False, dis=False):
