@@ -301,7 +301,7 @@ def format_standard_roll(rolled_dice, username, roll):
     output_text = []
     output_text.append("_")
     try:
-        output_text.append("rolled " + str(roll["num_dice"]) + "d" + str(roll["die"]) + " = ")
+        output_text.append(username + " rolled " + str(roll["num_dice"]) + "d" + str(roll["die"]) + " = ")
     except:
         raise DicebotException("format_standard_roll could not cast roll values to string.")
 
